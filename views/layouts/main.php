@@ -24,42 +24,43 @@ AppAsset::register($this);
 
 <?php $this->beginBody() ?>
     <div class="wrap">
-        <?php
-            NavBar::begin([
-                'brandLabel' => 'My site',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-                ],
-            ]);
-            NavBar::end();
-        ?>
+      <?php
+          NavBar::begin([
+              'brandLabel' => 'Anton Maksimchuk',
+              'brandUrl' => Yii::$app->homeUrl,
+              'options' => [
+                  'class' => 'navbar-inverse navbar-fixed-top',
+              ],
+          ]);
+          echo Nav::widget([
+              'options' => ['class' => 'navbar-nav navbar-right'],
+              'items' => [
+                  ['label' => 'Home', 'url' => ['/site/index']],
+                  ['label' => 'About', 'url' => ['/site/about']],
+                  ['label' => 'Contact', 'url' => ['/site/contact']],
+                  Yii::$app->user->isGuest ?
+                      ['label' => 'Login', 'url' => ['/site/login']] :
+                      ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                          'url' => ['/site/logout'],
+                          'linkOptions' => ['data-method' => 'post']],
+              ],
+          ]);
+          NavBar::end();
+      ?>
 
-        <div class="container">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?= $content ?>
-        </div>
+      <!-- <div class="container">
+          <?= Breadcrumbs::widget([
+              'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+          ]) ?>
+      </div> -->
+
+      <?= $content ?>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; My blog <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
+            <p class="pull-left">&copy; Anton Maksimchuk <?= date('Y') ?></p>
+             <p class="pull-right"><a href="#">Back to top</a></p>
         </div>
     </footer>
 
